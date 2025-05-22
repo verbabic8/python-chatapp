@@ -31,6 +31,5 @@ Port = int(sys.argv[2])
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.connect((IP_address, Port))
 
-# Start a thread for receiving messages
 threading.Thread(target=receive_messages, args=(server,), daemon=True).start()
 send_messages(server)
